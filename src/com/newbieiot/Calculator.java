@@ -60,53 +60,99 @@ public class Calculator extends javax.swing.JFrame {
 
         txtDisplay.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtDisplay.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtDisplay.setText("0");
 
-        btnDivide.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnDivide.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnDivide.setText("÷");
 
-        btnEqualsTo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnEqualsTo.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnEqualsTo.setText("=");
 
-        btnZero.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnZero.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnZero.setText("0");
+        btnZero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnZeroActionPerformed(evt);
+            }
+        });
 
-        btnPlusMinus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnPlusMinus.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnPlusMinus.setText("±");
 
-        btnAddition.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnAddition.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnAddition.setText("+");
 
-        btnThree.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnThree.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnThree.setText("3");
+        btnThree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThreeActionPerformed(evt);
+            }
+        });
 
-        btnTwo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnTwo.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnTwo.setText("2");
+        btnTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTwoActionPerformed(evt);
+            }
+        });
 
-        btnOne.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnOne.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnOne.setText("1");
+        btnOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOneActionPerformed(evt);
+            }
+        });
 
-        btnSeven.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnSeven.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSeven.setText("7");
+        btnSeven.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSevenActionPerformed(evt);
+            }
+        });
 
-        btnEight.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnEight.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnEight.setText("8");
+        btnEight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEightActionPerformed(evt);
+            }
+        });
 
-        btnNine.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnNine.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnNine.setText("9");
+        btnNine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNineActionPerformed(evt);
+            }
+        });
 
-        btnMultiplication.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnMultiplication.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnMultiplication.setText("*");
 
-        btnSubstraction.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnSubstraction.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSubstraction.setText("-");
 
-        btnSix.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnSix.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSix.setText("6");
+        btnSix.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSixActionPerformed(evt);
+            }
+        });
 
-        btnFour.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnFour.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnFour.setText("4");
+        btnFour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFourActionPerformed(evt);
+            }
+        });
 
-        btnFive.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnFive.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnFive.setText("5");
         btnFive.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,28 +160,38 @@ public class Calculator extends javax.swing.JFrame {
             }
         });
 
-        btnClearEntry.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnClearEntry.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnClearEntry.setText("CE");
+        btnClearEntry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearEntryActionPerformed(evt);
+            }
+        });
 
-        btnClearGlobal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnClearGlobal.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnClearGlobal.setText("C");
 
-        btnDecimal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnDecimal.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnDecimal.setText(".");
+        btnDecimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDecimalActionPerformed(evt);
+            }
+        });
 
-        btnBackSpace.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnBackSpace.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnBackSpace.setText("←");
 
-        btnPercent.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnPercent.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnPercent.setText("%");
 
-        btnPowOf.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnPowOf.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnPowOf.setText("^");
 
-        btnInversePow.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnInversePow.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnInversePow.setText("1/x");
 
-        btnSqRoot.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnSqRoot.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSqRoot.setText("√");
 
         jLabel1.setForeground(new java.awt.Color(255, 102, 0));
@@ -258,7 +314,106 @@ public class Calculator extends javax.swing.JFrame {
 
     private void btnFiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFiveActionPerformed
         // TODO add your handling code here:
+        if(txtDisplay.getText().equals("0")){
+            txtDisplay.setText("5");
+        }else{
+            txtDisplay.setText(txtDisplay.getText() + "5");
+        }
     }//GEN-LAST:event_btnFiveActionPerformed
+
+    private void btnOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOneActionPerformed
+        if(txtDisplay.getText().equals("0")){
+            txtDisplay.setText("1");
+        }else{
+            txtDisplay.setText(txtDisplay.getText() + "1");
+        }
+    }//GEN-LAST:event_btnOneActionPerformed
+
+    private void btnTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTwoActionPerformed
+        // TODO add your handling code here:
+        if(txtDisplay.getText().equals("0")){
+            txtDisplay.setText("2");
+        }else{
+            txtDisplay.setText(txtDisplay.getText() + "2");
+        }
+    }//GEN-LAST:event_btnTwoActionPerformed
+
+    private void btnThreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThreeActionPerformed
+        // TODO add your handling code here:
+        if(txtDisplay.getText().equals("0")){
+            txtDisplay.setText("3");
+        }else{
+            txtDisplay.setText(txtDisplay.getText() + "3");
+        }
+    }//GEN-LAST:event_btnThreeActionPerformed
+
+    private void btnFourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFourActionPerformed
+        // TODO add your handling code here:
+        if(txtDisplay.getText().equals("0")){
+            txtDisplay.setText("4");
+        }else{
+            txtDisplay.setText(txtDisplay.getText() + "4");
+        }
+    }//GEN-LAST:event_btnFourActionPerformed
+
+    private void btnSixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSixActionPerformed
+        // TODO add your handling code here:
+        if(txtDisplay.getText().equals("0")){
+            txtDisplay.setText("6");
+        }else{
+            txtDisplay.setText(txtDisplay.getText() + "6");
+        }
+    }//GEN-LAST:event_btnSixActionPerformed
+
+    private void btnSevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSevenActionPerformed
+        // TODO add your handling code here:
+        if(txtDisplay.getText().equals("0")){
+            txtDisplay.setText("7");
+        }else{
+            txtDisplay.setText(txtDisplay.getText() + "7");
+        }
+    }//GEN-LAST:event_btnSevenActionPerformed
+
+    private void btnEightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEightActionPerformed
+        // TODO add your handling code here:
+        if(txtDisplay.getText().equals("0")){
+            txtDisplay.setText("8");
+        }else{
+            txtDisplay.setText(txtDisplay.getText() + "8");
+        }
+    }//GEN-LAST:event_btnEightActionPerformed
+
+    private void btnNineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNineActionPerformed
+        // TODO add your handling code here:
+        if(txtDisplay.getText().equals("0")){
+            txtDisplay.setText("9");
+        }else{
+            txtDisplay.setText(txtDisplay.getText() + "9");
+        }
+    }//GEN-LAST:event_btnNineActionPerformed
+
+    private void btnZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZeroActionPerformed
+        // TODO add your handling code here:
+        if(txtDisplay.getText().equals("0")){
+            txtDisplay.setText("0");
+        }else{
+            txtDisplay.setText(txtDisplay.getText() + "0");
+        }
+    }//GEN-LAST:event_btnZeroActionPerformed
+
+    private void btnDecimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDecimalActionPerformed
+        // TODO add your handling code here:
+        if(txtDisplay.getText().equals("0")){
+            txtDisplay.setText("0.");
+        }else{
+            txtDisplay.setText(txtDisplay.getText() + ".");
+        }
+    }//GEN-LAST:event_btnDecimalActionPerformed
+
+    private void btnClearEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearEntryActionPerformed
+        // TODO add your handling code here:
+        txtDisplay.setText("0");
+    }//GEN-LAST:event_btnClearEntryActionPerformed
 
     /**
      * @param args the command line arguments
