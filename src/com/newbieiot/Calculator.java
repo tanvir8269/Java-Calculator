@@ -10,7 +10,25 @@ package com.newbieiot;
  * @author tanvir
  */
 public class Calculator extends javax.swing.JFrame {
+    private double num;
+    private char sign;
 
+    public void setNum(double num) {
+        this.num = num;
+    }
+
+    public void setSign(char sign) {
+        this.sign = sign;
+    }
+
+    public double getNum() {
+        return num;
+    }
+
+    public char getSign() {
+        return sign;
+    }
+    
     /**
      * Creates new form Calculator
      */
@@ -52,7 +70,7 @@ public class Calculator extends javax.swing.JFrame {
         btnPowOf = new javax.swing.JButton();
         btnInversePow = new javax.swing.JButton();
         btnSqRoot = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblData = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculator");
@@ -81,6 +99,11 @@ public class Calculator extends javax.swing.JFrame {
 
         btnAddition.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnAddition.setText("+");
+        btnAddition.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdditionActionPerformed(evt);
+            }
+        });
 
         btnThree.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnThree.setText("3");
@@ -170,6 +193,11 @@ public class Calculator extends javax.swing.JFrame {
 
         btnClearGlobal.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnClearGlobal.setText("C");
+        btnClearGlobal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearGlobalActionPerformed(evt);
+            }
+        });
 
         btnDecimal.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnDecimal.setText(".");
@@ -181,6 +209,11 @@ public class Calculator extends javax.swing.JFrame {
 
         btnBackSpace.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnBackSpace.setText("←");
+        btnBackSpace.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackSpaceActionPerformed(evt);
+            }
+        });
 
         btnPercent.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnPercent.setText("%");
@@ -194,8 +227,8 @@ public class Calculator extends javax.swing.JFrame {
         btnSqRoot.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnSqRoot.setText("√");
 
-        jLabel1.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblData.setForeground(new java.awt.Color(255, 102, 0));
+        lblData.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -258,17 +291,17 @@ public class Calculator extends javax.swing.JFrame {
                         .addComponent(btnPowOf, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnInversePow, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addComponent(lblData, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnInversePow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -415,6 +448,61 @@ public class Calculator extends javax.swing.JFrame {
         txtDisplay.setText("0");
     }//GEN-LAST:event_btnClearEntryActionPerformed
 
+    private void btnBackSpaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackSpaceActionPerformed
+        // TODO add your handling code here:
+        if((txtDisplay.getText().length()>0)&&(!txtDisplay.getText().equals("0"))){
+           StringBuilder s = new StringBuilder(txtDisplay.getText());
+           int num = txtDisplay.getText().length();
+           txtDisplay.setText(s.deleteCharAt(num-1).toString());
+           if(txtDisplay.getText().isEmpty()){
+               txtDisplay.setText("0");
+           }
+        }
+    }//GEN-LAST:event_btnBackSpaceActionPerformed
+
+    private void btnClearGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearGlobalActionPerformed
+        // TODO add your handling code here:
+        txtDisplay.setText("");
+        lblData.setText("");
+    }//GEN-LAST:event_btnClearGlobalActionPerformed
+    
+    private void btnAdditionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdditionActionPerformed
+        // TODO add your handling code here:
+        if(!lblData.getText().isEmpty()){
+            //do addition and set result to the lbl
+            double result = calculate(Double.parseDouble(txtDisplay.getText()));
+            lblData.setText(Double.toString(result) + "+");
+            this.setNum(result);
+            this.setSign('+');
+            txtDisplay.setText("0");
+        }else{
+            lblData.setText(txtDisplay.getText() + "+");
+            this.setNum(Double.parseDouble(txtDisplay.getText()));
+            this.setSign('+');
+            txtDisplay.setText("0");
+        }
+    }//GEN-LAST:event_btnAdditionActionPerformed
+    public double calculate(double d){
+        double answer;
+        switch(this.getSign()){
+            case '+':
+                answer = this.getNum() + d;
+                break;
+            case '-':
+                answer = this.getNum() - d;
+                break;
+            case '*':
+                answer = this.getNum() * d;
+                break;
+            case '/':
+                answer = this.getNum() / d;
+                break;
+            default:
+                answer = 0;
+                break;
+        }
+        return answer;
+    }
     /**
      * @param args the command line arguments
      */
@@ -475,7 +563,7 @@ public class Calculator extends javax.swing.JFrame {
     private javax.swing.JButton btnThree;
     private javax.swing.JButton btnTwo;
     private javax.swing.JButton btnZero;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblData;
     private javax.swing.JTextField txtDisplay;
     // End of variables declaration//GEN-END:variables
 }
